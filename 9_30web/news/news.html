@@ -39,10 +39,30 @@
         border-bottom: 1px dashed #ccc;
         padding-bottom: 15px;
     }
+    .nav {
+         list-style-type: none;
+        padding: 0;
+        background-color: #3a3a3a;
+    }
+
+    /* 新增 BACK 按鈕的樣式 */
+    .back-btn {
+        background-color: #3a3a3a;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-bottom: 20px;
+        font-family: inherit;
+    }
+    .back-btn:hover {
+        background-color: #555; /* 滑鼠懸停時變淺 */
+    }
 </style>
 </head>
 <body>
-        <ul class="nav-list">
+    <ul class="nav-list">
         <li><a href="../index.html">Home</a></li>
         <li><a href="./news.html">News</a></li>
         <li><a href="../contact/contact.html">Contact</a></li>
@@ -51,6 +71,9 @@
     </ul>
 
     <div class="content-area">
+        <!-- 新增的 BACK 按鈕，點擊後會觸發瀏覽器的上一頁功能 -->
+        <button class="back-btn" onclick="history.back()">&#8592; Back</button>
+
         <h1>Latest News</h1>
         <div class="news-item">
             <h2>New Pastries Available!</h2>
@@ -61,5 +84,6 @@
             <p>Get a 20% discount on all cakes and tarts this weekend.</p>
         </div>
     </div>
+    
 </body>
 </html>
