@@ -1,0 +1,389 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* 改為現代無襯線字體，乾淨俐落 */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans TC", sans-serif;
+  background-color: #f8fafc; /* 非常淺的科技灰藍色底 */
+  color: #0f172a;
+}
+
+header {
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px); /* 毛玻璃特效 */
+  -webkit-backdrop-filter: blur(12px);
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #475569;
+  margin-left: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px; 
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #f1f5f9;
+  color: #0ea5e9; /* 亮眼的科技藍 */
+}
+
+.hero {
+  position: relative;
+  height: calc(100vh - 65px); 
+  /* 改為深色漸層，更有現代感 */
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.4)), url('Profile.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 10%; 
+}
+
+.hero-content {
+  color: #ffffff;
+  max-width: 400px;
+}
+
+.subtitle {
+  font-size: 13px;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #bae6fd;
+}
+
+.hero-content h1 {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  letter-spacing: -1px;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background-color: #0ea5e9;
+  border-radius: 2px;
+  margin-bottom: 30px;
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.content-container, .attractions-section, .travel-planner-section {
+  max-width: 1000px;
+  margin: 100px auto;
+  padding: 0 30px;
+}
+
+.intro-section {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 80px;
+  scroll-margin-top: 120px; 
+}
+
+/* 將原本的小字改成藥丸型標章 */
+.small-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.small-tags li {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0ea5e9;
+  background-color: #e0f2fe;
+  padding: 6px 16px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+/* 圖片容器：加大圓角與陰影，增加圖片放大特效 */
+.img-container {
+  position: relative;
+  width: 380px;        
+  height: 380px;       
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;        
+  object-fit: cover;  
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.img-container:hover img {
+  transform: scale(1.05);
+}
+
+.img-right { float: right; margin-left: 40px; margin-bottom: 20px; }
+.img-left { float: left; margin-right: 40px; margin-bottom: 20px; }
+
+/* 覆蓋層加入漸層與位移動畫 */
+.overlay {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  height: 100%; width: 100%;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.2));
+  transition: all 0.4s ease;
+}
+
+.img-container:hover .overlay { opacity: 1; }
+
+.overlay-text {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  position: absolute;
+  top: 60%; left: 50%;
+  transform: translate(-50%, 20px);
+  text-align: center;
+  line-height: 1.5;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.img-container:hover .overlay-text {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.overlay-text span {
+  font-size: 14px;
+  font-weight: 400;
+  color: #94a3b8;
+  display: block;
+  margin-top: 5px;
+}
+
+.intro-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+/* 卡片設計更新 */
+.section-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-end; 
+  margin-bottom: 40px;
+}
+
+.header-hint-text {
+  font-size: 13px;
+  color: #94a3b8;
+  max-width: 250px;
+  line-height: 1.6;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.card img {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover; 
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.card:hover img { transform: scale(1.05); }
+
+.card .overlay {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  height: 100%; width: 100%;
+  opacity: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+  transition: all 0.4s ease;
+}
+
+.card:hover .overlay { opacity: 1; }
+
+.card .overlay-text {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 20px; left: 0;
+  top: auto;
+  transform: translateY(20px);
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.card:hover .overlay-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 課表與表格設計現代化 */
+.schedule-wrapper {
+  overflow-x: auto;
+  margin-bottom: 60px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+  padding: 10px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.schedule-table th, .schedule-table td {
+  border: 4px solid #fff; /* 用粗白線分隔，取代死板的細線 */
+  padding: 16px 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 8px; /* 儲存格內圓角 */
+}
+
+.schedule-table thead th {
+  background-color: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.schedule-table .period-col {
+  background-color: #f1f5f9;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* 課表顏色調整為更有質感的低飽和度 */
+.course-ds { background-color: #ffedd5; }
+.course-oop { background-color: #fce7f3; }
+.course-hr { background-color: #f3f4f6; }
+.course-app { background-color: #fae8ff; }
+.course-net { background-color: #dcfce7; }
+.course-eng { background-color: #e0f2fe; }
+.course-city { background-color: #fef9c3; }
+.course-arch { background-color: #dbeafe; }
+.course-pe { background-color: #ecfccb; }
+.course-web { background-color: #f3e8ff; }
+
+.course-name {
+  display: block;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.course-loc {
+  display: block;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* 聯絡表格 */
+.travel-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.travel-table th {
+  background-color: #0f172a;
+  color: #fff;
+  padding: 18px 20px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.travel-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 15px;
+}
+
+.travel-table tr:last-child td {
+  border-bottom: none;
+}
+
+.budget-table a {
+  color: #0ea5e9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.budget-table a:hover {
+  text-decoration: underline;
+}
+
+.right-align {
+  text-align: right;
+}
