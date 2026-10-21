@@ -1,0 +1,362 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Georgia", "Times New Roman", serif;
+  letter-spacing: 1px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  margin-left: 30px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px; 
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffbb00;
+}
+
+.hero {
+  position: relative;
+  height: calc(100vh - 70px); 
+  background-image: linear-gradient(to right,rgb(0, 0, 0), rgba(255, 187, 0, 0.4)), url('CHANGHUA.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0 10%; 
+}
+
+.hero-content {
+  color: #ffffff;
+  max-width: 300px;
+}
+
+.subtitle {
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 80px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.content-container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.intro-section {
+  clear: both;
+  overflow: hidden;
+  margin-bottom: 60px;
+  scroll-margin-top: 100px; 
+}
+
+.small-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  display: flex;
+  gap: 15px;
+}
+
+.small-tags li {
+  font-size: 12px;
+  font-weight: bold;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.intro-section h2 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.img-container {
+  position: relative;
+  width: 350px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.img-right {
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 15px;
+}
+
+.img-left {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+.img-container img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  height: 100%; width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(58, 47, 71, 0.85);
+}
+
+.img-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  color: rgba(246, 250, 186, 0.822);
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.attractions-section {
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+  scroll-margin-top: 100px; 
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-end; 
+  margin-bottom: 30px;
+}
+
+.attractions-section h2 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 32px;
+  color: #111;
+  margin-bottom: 0; 
+}
+
+.header-hint-text {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: #888;
+  max-width: 250px;
+  line-height: 1.5;
+  padding-bottom: 5px;
+}
+
+.footer-hint-text {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  color: #888;
+  margin-top: 15px;
+  text-align: left;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover; 
+  display: block;
+}
+
+.card .overlay {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  height: 100%; width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(51, 45, 104, 0.85);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.card .overlay-text {
+  color: rgb(186, 196, 168);
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+/* Travel Planner Section Styles */
+.travel-planner-section {
+  max-width: 900px;
+  margin: 0 auto 80px auto;
+  padding: 0 20px;
+  scroll-margin-top: 100px;
+}
+
+.travel-planner-section h2 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 32px;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.travel-planner-section h2.sub-heading {
+  font-size: 26px;
+  margin-top: 60px;
+}
+
+.travel-planner-section p.intro-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.travel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.travel-table thead {
+  background-color: #3a2f47; 
+  color: #ffffff;
+}
+
+.travel-table th {
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: bold;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.travel-table th:last-child {
+  border-right: none;
+}
+
+.travel-table td {
+  padding: 18px 15px;
+  color: #333;
+}
+
+.travel-table tbody tr:nth-child(odd) {
+  background-color: #fcfcfc;
+}
+
+.travel-table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+.budget-table tbody tr {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.budget-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.col-day { width: 15%; font-weight: bold; }
+.col-time { width: 28%; }
+.col-category { width: 30%; font-weight: bold; background-color: #eaeaea; }
+.col-item { width: 40%; }
+.col-cost { width: 30%; text-align: right; }
+
+.highlight-cell {
+  text-align: center !important;
+  color: #111;
+  font-weight: bold;
+  background-color: rgba(255, 187, 0, 0.25) !important; 
+}
+
+.right-align {
+  text-align: right;
+}
+
+tr, td, th {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: 2px solid rgb(255, 255, 255);
+  padding: 1px;
+}
